@@ -39,6 +39,7 @@ int main()
     
     cout << inventory2 << endl;
     inventory2.buy();
+    cout << inventory2 << endl;
 
     return 0;
 }
