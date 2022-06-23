@@ -183,6 +183,7 @@ namespace Inventory
 
     string ManageInventory::CostToString(float cost)
     {
+        string costFloatStr = to_string(cost);
         string costStr = to_string(int(cost));
         string costStrOut = "";
         int index = 0;
@@ -196,7 +197,8 @@ namespace Inventory
             costStrOut += costStr[index];
             index++;
         }
-        return "$" + costStrOut + '.' + to_string(cost - int(cost));
+        // grab the last two digits of the cost and add a dollar sign
+        return "$" + costStrOut + '.' + costFloatStr.substr(costFloatStr.size() - 2);
     }
 
     /*************************************************************************
@@ -221,10 +223,10 @@ namespace Inventory
         else
         {
             o << left;
-            o << setw(20) << "Name" << setw(10) << "Quantity" << setw(10) << "Cost" << endl;
+            o << setw(30) << "Name" << setw(10) << "Quantity" << setw(10) << "Cost" << endl;
             for (int i = 0; i < inventory.count; i++)
             {
-                o << setw(20) << inventory.p_pInventoryItems[i]->name
+                o << setw(30) << inventory.p_pInventoryItems[i]->name
                   << setw(10) << inventory.p_pInventoryItems[i]->quantity
                   << setw(10) << inventory.CostToString(inventory.p_pInventoryItems[i]->cost) << endl;
             }
