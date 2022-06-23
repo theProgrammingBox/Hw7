@@ -116,7 +116,7 @@ namespace Inventory
                         inventory.AddItem(name, quantity, p_pInventoryItems[i]->cost);
                         p_pInventoryItems[i]->quantity -= quantity;
                     }
-                    // cout << quantity << " of " << name << " was transferred to the inventory.\n";
+                    cout << quantity << " of " << name << " was transferred.\n";
                     return;
                 }
             }
@@ -143,8 +143,8 @@ namespace Inventory
         {
             total += p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity;
         }
-        cout << "Receipt before tax: " << total << endl;
-        cout << "Receipt after tax: " << total * 1.0825 << "\n\n";
+        cout << "Total before tax: " << CostToString(total) << endl;
+        cout << "Total after tax: " << CostToString(total * 1.0825) << "\n\n";
     }
 
     /*************************************************************************
@@ -162,13 +162,20 @@ namespace Inventory
     
     void ManageInventory::Buy(ManageInventory &history)
     {
+        for (int i = 0; i < count; i++)
+        {
+            cout << "Bought " << p_pInventoryItems[i]->quantity 
+            << " " << p_pInventoryItems[i]->name << " for " 
+            << CostToString(p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity) << endl;
+        }
         PrintReceipt();
         for (int i = 0; i < count; i++)
         {
             TransferTo(history, p_pInventoryItems[i]->name, p_pInventoryItems[i]->quantity);
         }
+        cout << endl;
     }
-    //CostToString
+    
     /*************************************************************************
      * Method CostToString: Class Inventory
      * ----------------------------------------------------------------------
