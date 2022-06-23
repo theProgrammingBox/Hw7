@@ -59,5 +59,19 @@ int main()
     cout << "Inventory2:\n" << inventory2 << endl;
     cout << "Cart:\n" << cart << endl;
     cout << "History:\n" << history << endl;
+
+    inventory.TransferTo(cart, "Asics running shoes", 4);
+    inventory.TransferTo(cart, "Brooks running shoes", 1);
+    inventory.TransferTo(cart, "Nike shorts", 2);
+    inventory.TransferTo(cart, "Nike basketball shoes", 2);
+    cout << endl;
+    cout << "Inventory2:\n" << inventory2 << endl;
+    cout << "Cart:\n" << cart << endl;
+    cout << "History:\n" << history << endl;
+
+    cart.Buy(history);
+    cout << "Inventory2:\n" << inventory2 << endl;
+    cout << "Cart:\n" << cart << endl;
+    cout << "History:\n" << history << endl;
     return 0;
 }
