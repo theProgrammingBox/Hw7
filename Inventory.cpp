@@ -55,7 +55,7 @@ namespace Inventory
      *     The receipt will be printed.
      *************************************************************************/
 
-    void ManageInventory::PrintReceipt() const
+    void ManageInventory::PrintReceipt()
     {
         float total = 0;
         for (int i = 0; i < count; i++)

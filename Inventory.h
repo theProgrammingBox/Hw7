@@ -29,7 +29,7 @@ namespace Inventory
 
         /*** Accessors ***/
 
-        void PrintReceipt() const;
+        void PrintReceipt();
 
         /*** Mutators ***/
 
