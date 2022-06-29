@@ -4,9 +4,9 @@ ostream &operator<<(ostream &o, ManageInventory &object)
 {
     for (int i = 0; i < object.count; i++)
     {
-        o << "Object: " << object.p_pInventoryItems[i]->name
+        o << "Equipment: " << object.p_pInventoryItems[i]->name
           << " Quantity: " << object.p_pInventoryItems[i]->quantity
-          << " Price: $" << object.p_pInventoryItems[i]->cost
+          << " Cost: $" << object.p_pInventoryItems[i]->cost
           << endl;
     }
 
@@ -40,4 +40,14 @@ void ManageInventory::printReceipt()
     cout << "Total (Before tax): $" << total << endl;
     // after 8.25% tax
     cout << "Total (After tax): $" << total * 1.0825 << endl;
+}
+
+ManageInventory::ManageInventory(const ManageInventory &other) : size{other.size}, count{other.count}, p_pInventoryItems{new Item *[other.size]}
+{
+    size = other.size;
+    count = other.count;
+    for (int i = 0; i < other.count; i++)
+    {
+        p_pInventoryItems[i] = new Item{*other.p_pInventoryItems[i]};
+    }
 }
