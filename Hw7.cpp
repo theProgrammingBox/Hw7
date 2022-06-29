@@ -1,5 +1,5 @@
 /*************************************************************************
- * AUTHOR     	 : Justin Gea
+ * AUTHOR     	 : 
  * Assignment #7 : Pointers & Dynamic Arrays
  * CLASS      	 : CS 1C
  * SECTION    	 : MTWTTH 03:00pm - 05:35pm
