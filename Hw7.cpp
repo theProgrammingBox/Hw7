@@ -31,6 +31,7 @@ int main()
     inventory.addItem("Nike shorts", 77, 45.77);
 
     cout << inventory << endl;
+    inventory.printReceipt();
 
     return 0;
 }
