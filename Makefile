@@ -1,15 +1,15 @@
 CC = g++
 FLAGS = -std=c++14 -Wall -g
-OBJS = Main.o
-FILES = Main.cpp Header.h
+OBJS = Hw7.o
+FILES = Hw7.cpp Header.h
 
 all: Hw7
 
 Hw7: $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o Hw7
 
-Main.o: Main.cpp Header.h
-	$(CC) $(FLAGS) -c Main.cpp
+Hw7.o: Hw7.cpp Header.h
+	$(CC) $(FLAGS) -c Hw7.cpp
 
 tar:
 	tar -cf Hw7.tar Hw7.scr Makefile $(FILES)
