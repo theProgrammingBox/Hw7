@@ -23,7 +23,8 @@ public:
     ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {}
     ~ManageInventory();
     void addItem(string name, int quantity, float cost);
-
+    void printReceipt();
+    
 private:
     int size{MAX_SIZE};
     int count;

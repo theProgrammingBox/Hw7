@@ -29,3 +29,15 @@ ManageInventory::~ManageInventory()
     }
     delete[] p_pInventoryItems;
 }
+
+void ManageInventory::printReceipt()
+{
+    float total = 0;
+    for (int i = 0; i < count; i++)
+    {
+        total += p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity;
+    }
+    cout << "Total (Before tax): $" << total << endl;
+    // after 8.25% tax
+    cout << "Total (After tax): $" << total * 1.0825 << endl;
+}
