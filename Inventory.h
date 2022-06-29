@@ -5,29 +5,32 @@
 #include <string>
 using namespace std;
 
-struct Item
+namespace Inventory
 {
-    string name;
-    int quantity;
-    float cost;
-};
+    struct Item
+    {
+        string name;
+        int quantity;
+        float cost;
+    };
 
-const int MAX_SIZE = 50;
+    const int MAX_SIZE = 50;
 
-class ManageInventory
-{
-    friend ostream &operator<<(ostream &o, ManageInventory &object);
+    class ManageInventory
+    {
+        friend ostream &operator<<(ostream &o, ManageInventory &object);
 
-public:
-    ManageInventory() : count{0}, p_pInventoryItems{new Item *[size]} {}
-    ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {} 
-    ManageInventory(const ManageInventory &other); // Copy ctor
-    ~ManageInventory();
-    void addItem(string name, int quantity, float cost);
-    void printReceipt();
+    public:
+        ManageInventory() : count{0}, p_pInventoryItems{new Item *[size]} {}
+        ManageInventory(int size) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {}
+        ManageInventory(const ManageInventory &other); // Copy ctor
+        ~ManageInventory();
+        void addItem(string name, int quantity, float cost);
+        void printReceipt();
 
-private:
-    int size{MAX_SIZE};
-    int count;
-    Item **p_pInventoryItems;
-};
+    private:
+        int size{MAX_SIZE};
+        int count;
+        Item **p_pInventoryItems;
+    };
+}

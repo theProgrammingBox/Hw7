@@ -1,5 +1,5 @@
 /*************************************************************************
- * AUTHOR     	 : 
+ * AUTHOR     	 :
  * Assignment #7 : Pointers & Dynamic Arrays
  * CLASS      	 : CS 1C
  * SECTION    	 : MTWTTH 03:00pm - 05:35pm
@@ -8,17 +8,22 @@
 
 #include "Inventory.h"
 
+using namespace Inventory;
+
 /**********************************************************
  *
  * Pointers & Dynamic Arrays
  *_________________________________________________________
- * This program will //
+ * This program will demonstrate the use of pointers and
+ * dynamic arrays through the use of the Inventory class.
  *_________________________________________________________
  * INPUT:
- *    //
+ *      none      -   There are no inputs for this program.
  *
  * OUTPUT:
- *    //
+ *      inventory  -   This will display the contents of the
+ *                  inventory.
+ *      inventory2  -   This will display the contents of the
  ***********************************************************/
 
 int main()
