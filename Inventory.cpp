@@ -197,7 +197,6 @@ namespace Inventory
             costStrOut += costStr[index];
             index++;
         }
-        // grab the last two digits of the cost and add a dollar sign
         return "$" + costStrOut + '.' + costFloatStr.substr(costFloatStr.size() - 2);
     }
 
