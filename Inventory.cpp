@@ -43,26 +43,45 @@ namespace Inventory
         // after 8.25% tax
         cout << "Total (After tax): $" << total * 1.0825 << endl;
     }
-    void ManageInventory::printHistory()
-    {
-        cout << "Transaction History: " << endl;
-        for (int i = 0; i < count; i++)
-        {
-            cout << "Equipment: " << p_pInventoryItems[i]->name
-                 << " Quantity: " << p_pInventoryItems[i]->quantity
-                 << " Cost: $" << p_pInventoryItems[i]->cost
-                 << endl;
-        }
-    }
 
-    void ManageInventory::buy()
+    // void ManageInventory::printHistory()
+    // {
+    //     cout << "Transaction History: " << endl;
+    //     for (int i = 0; i < count; i++)
+    //     {
+    //         cout << "Equipment: " << p_pInventoryItems[i]->name
+    //              << " Quantity: " << p_pInventoryItems[i]->quantity
+    //              << " Cost    : $" << p_pInventoryItems[i]->cost
+    //              << endl;
+    //     }
+    // }
+
+    void ManageInventory::addToCart(ManageInventory &inventory,
+                                    ManageInventory &cart, 
+                                    string name, int quantity)
     {
-        printReceipt();
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < inventory.count; i++)
         {
-            delete p_pInventoryItems[i];
+            if (name == inventory.p_pInventoryItems[i]->name)
+            {
+                // for (int i = 0; i < cart.p_pInventoryItems[i]->count; i++)
+                // {
+                    
+                // }
+                if (inventory.p_pInventoryItems[i]->quantity == quantity)
+                {
+                    cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
+                    delete inventory.p_pInventoryItems[i];
+                    count--;
+                }
+                else if (inventory.p_pInventoryItems[i]->quantity > quantity)
+                {
+                    cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
+                    inventory.p_pInventoryItems[i]->quantity -= quantity;
+                }
+            }
         }
-        count = 0;
+        cout << "That item is not in our inventory.\n";
     }
 
     ManageInventory::ManageInventory(const ManageInventory &other) : size{other.size}, count{other.count}, p_pInventoryItems{new Item *[other.size]}

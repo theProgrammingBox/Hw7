@@ -24,23 +24,24 @@ using namespace Inventory;
  *      inventory  -   This will display the contents of the
  *                  inventory.
  *      inventory2  -   This will display the contents of the
+ *                 inventory.
  ***********************************************************/
 
 int main()
 {
     ManageInventory inventory(10);
+    ManageInventory cart(10);
     inventory.addItem("Nike basketball shoes", 22, 145.99);
     inventory.addItem("Under Armour T-shirt", 33, 29.99);
     inventory.addItem("Brooks running shoes", 11, 111.44);
     inventory.addItem("Asics running shoes", 20, 165.88);
     inventory.addItem("Nike shorts", 77, 45.77);
-    
-    ManageInventory inventory2(inventory);
-    
-    cout << inventory2 << endl;
-    inventory2.buy();
-    cout << inventory2 << endl;
+    cout << inventory << endl;
 
+    inventory.addToCart(inventory, cart, "Brooks running shoes", 11);
+    ManageInventory inventory2(inventory);
+    cout << inventory2 << endl;
+    cout << cart << endl;
     return 0;
 }
 

@@ -26,9 +26,9 @@ namespace Inventory
         ManageInventory(const ManageInventory &other); // Copy ctor
         ~ManageInventory();
         void addItem(string name, int quantity, float cost);
+        void addToCart(ManageInventory &inventory, ManageInventory &cart, string name, int quantity);
         void printReceipt();
-        void printHistory();
-        void buy();
+        // void printHistory();
 
     private:
         int size{MAX_SIZE};
