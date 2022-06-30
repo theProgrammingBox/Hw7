@@ -83,14 +83,7 @@ namespace Inventory
                 //         }
                 //     }
                 // }
-                if (inventory.p_pInventoryItems[i]->quantity == quantity)
-                {
-                    cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
-                    delete inventory.p_pInventoryItems[i];
-                    count--;
-                    return;
-                }
-                else if (inventory.p_pInventoryItems[i]->quantity > quantity)
+                if (inventory.p_pInventoryItems[i]->quantity >= quantity)
                 {
                     cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
                     inventory.p_pInventoryItems[i]->quantity -= quantity;
