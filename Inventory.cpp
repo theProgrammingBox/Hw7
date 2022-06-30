@@ -190,7 +190,6 @@ namespace Inventory
         }
         else
         {
-            o << "This inventory contains:" << endl;
             o << setw(20) << left << "Name" << setw(10) << right << "Quantity" << setw(10) << right << "Cost" << endl;
             for (int i = 0; i < inventory.count; i++)
             {
