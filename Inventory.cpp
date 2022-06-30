@@ -25,7 +25,7 @@ namespace Inventory
     ManageInventory::~ManageInventory()
     {
         // Destroys each ptr obj in p_pInventoryItems array
-        for (int i = 0; p_pInventoryItems[i] != nullptr; i++)
+        for (int i = 0; i < count; i++)
         {
             delete p_pInventoryItems[i];
         }
@@ -53,6 +53,16 @@ namespace Inventory
                  << " Cost: $" << p_pInventoryItems[i]->cost
                  << endl;
         }
+    }
+
+    void ManageInventory::buy()
+    {
+        printReceipt();
+        for (int i = 0; i < count; i++)
+        {
+            delete p_pInventoryItems[i];
+        }
+        count = 0;
     }
 
     ManageInventory::ManageInventory(const ManageInventory &other) : size{other.size}, count{other.count}, p_pInventoryItems{new Item *[other.size]}

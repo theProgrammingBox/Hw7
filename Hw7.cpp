@@ -34,13 +34,11 @@ int main()
     inventory.addItem("Brooks running shoes", 11, 111.44);
     inventory.addItem("Asics running shoes", 20, 165.88);
     inventory.addItem("Nike shorts", 77, 45.77);
-
-
-
+    
     ManageInventory inventory2(inventory);
-
+    
     cout << inventory2 << endl;
-    inventory2.printReceipt();
+    inventory2.buy();
 
     return 0;
 }

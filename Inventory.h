@@ -28,6 +28,7 @@ namespace Inventory
         void addItem(string name, int quantity, float cost);
         void printReceipt();
         void printHistory();
+        void buy();
 
     private:
         int size{MAX_SIZE};
