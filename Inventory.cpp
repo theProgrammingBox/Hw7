@@ -144,7 +144,7 @@ namespace Inventory
             total += p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity;
         }
         cout << "Receipt before tax: " << total << endl;
-        cout << "Receipt after tax: " << total * 1.0825 << endl;
+        cout << "Receipt after tax: " << total * 1.0825 << "\n\n";
     }
 
     /*************************************************************************
