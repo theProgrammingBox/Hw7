@@ -116,7 +116,7 @@ namespace Inventory
                         inventory.AddItem(name, quantity, p_pInventoryItems[i]->cost);
                         p_pInventoryItems[i]->quantity -= quantity;
                     }
-                    cout << quantity << " of " << name << " was transferred to the inventory.\n";
+                    // cout << quantity << " of " << name << " was transferred to the inventory.\n";
                     return;
                 }
             }
