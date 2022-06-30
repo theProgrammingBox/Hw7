@@ -69,9 +69,10 @@ int main()
     cout << "Cart:\n" << cart << endl;
     cout << "History:\n" << history << endl;
 
-    cart.Buy(history);
+    ManageInventory history2(history);
+    cart.Buy(history2);
     cout << "Inventory2:\n" << inventory2 << endl;
     cout << "Cart:\n" << cart << endl;
-    cout << "History:\n" << history << endl;
+    cout << "History2:\n" << history2 << endl;
     return 0;
 }
