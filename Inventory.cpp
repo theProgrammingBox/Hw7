@@ -64,20 +64,37 @@ namespace Inventory
         {
             if (name == inventory.p_pInventoryItems[i]->name)
             {
-                // for (int i = 0; i < cart.p_pInventoryItems[i]->count; i++)
+                // for (int i = 0; i < cart.count; i++)
                 // {
-                    
+                //     if (name == cart.p_pInventoryItems[i]->name)
+                //     {
+                //         if (inventory.p_pInventoryItems[i]->quantity == quantity)
+                //          {
+                //              cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
+                //              delete inventory.p_pInventoryItems[i];
+                //              count--;
+                //              return;
+                //         }
+                //         else if (inventory.p_pInventoryItems[i]->quantity > quantity)
+                //         {
+                //               cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
+                //               inventory.p_pInventoryItems[i]->quantity -= quantity;
+                //               return;
+                //         }
+                //     }
                 // }
                 if (inventory.p_pInventoryItems[i]->quantity == quantity)
                 {
                     cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
                     delete inventory.p_pInventoryItems[i];
                     count--;
+                    return;
                 }
                 else if (inventory.p_pInventoryItems[i]->quantity > quantity)
                 {
                     cart.addItem(name, quantity, inventory.p_pInventoryItems[i]->cost);
                     inventory.p_pInventoryItems[i]->quantity -= quantity;
+                    return;
                 }
             }
         }
