@@ -35,6 +35,8 @@ int main()
     inventory.addItem("Asics running shoes", 20, 165.88);
     inventory.addItem("Nike shorts", 77, 45.77);
 
+
+
     ManageInventory inventory2(inventory);
 
     cout << inventory2 << endl;

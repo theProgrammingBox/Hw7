@@ -43,6 +43,17 @@ namespace Inventory
         // after 8.25% tax
         cout << "Total (After tax): $" << total * 1.0825 << endl;
     }
+    void ManageInventory::printHistory()
+    {
+        cout << "Transaction History: " << endl;
+        for (int i = 0; i < count; i++)
+        {
+            cout << "Equipment: " << p_pInventoryItems[i]->name
+                 << " Quantity: " << p_pInventoryItems[i]->quantity
+                 << " Cost: $" << p_pInventoryItems[i]->cost
+                 << endl;
+        }
+    }
 
     ManageInventory::ManageInventory(const ManageInventory &other) : size{other.size}, count{other.count}, p_pInventoryItems{new Item *[other.size]}
     {

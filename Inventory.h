@@ -27,6 +27,7 @@ namespace Inventory
         ~ManageInventory();
         void addItem(string name, int quantity, float cost);
         void printReceipt();
+        void printHistory();
 
     private:
         int size{MAX_SIZE};
