@@ -168,6 +168,36 @@ namespace Inventory
             TransferTo(history, p_pInventoryItems[i]->name, p_pInventoryItems[i]->quantity);
         }
     }
+    //CostToString
+    /*************************************************************************
+     * Method CostToString: Class Inventory
+     * ----------------------------------------------------------------------
+     * This function will convert the cost to a string.
+     * ----------------------------------------------------------------------
+     * PRE-CON
+     *     float cost: The cost of the item.
+     *
+     * POST-CON
+     *     The cost will be converted to a string.
+     *************************************************************************/
+
+    string ManageInventory::CostToString(float cost)
+    {
+        string costStr = to_string(cost);
+        string costStrOut = "";
+        int index = 0;
+        int size = costStr.size();
+        while (index < size)
+        {
+            if ((size - index) % 3 == 0 && index != 0 && index != size - 1)
+            {
+                costStrOut += ",";
+            }
+            costStrOut += costStr[index];
+            index++;
+        }
+        return "$" + costStrOut;
+    }
 
     /*************************************************************************
      * Method operator<<: Class Inventory
@@ -190,10 +220,12 @@ namespace Inventory
         }
         else
         {
-            o << setw(20) << left << "Name" << setw(10) << right << "Quantity" << setw(10) << right << "Cost" << endl;
+            o << setw(20) << "Name" << setw(10) << "Quantity" << setw(10) << "Cost" << endl;
             for (int i = 0; i < inventory.count; i++)
             {
-                o << setw(20) << left << inventory.p_pInventoryItems[i]->name << setw(10) << right << inventory.p_pInventoryItems[i]->quantity << setw(10) << right << inventory.p_pInventoryItems[i]->cost << endl;
+                o << setw(20) << inventory.p_pInventoryItems[i]->name
+                  << setw(10) << inventory.p_pInventoryItems[i]->quantity
+                  << setw(10) << inventory.CostToString(inventory.p_pInventoryItems[i]->cost) << endl;
             }
         }
 

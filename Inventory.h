@@ -34,6 +34,7 @@ namespace Inventory
         int count;
         Item **p_pInventoryItems;
 
+        string CostToString(float cost);
         friend ostream &operator<<(ostream &o, ManageInventory &object);
     };
 }
