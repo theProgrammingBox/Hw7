@@ -18,4 +18,3 @@ clean:
 
 tar:
 	tar cf Hw7.tar Hw7.scr Makefile Hw7.cpp Inventory.h Inventory.cpp
-
