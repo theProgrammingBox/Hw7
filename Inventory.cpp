@@ -44,6 +44,29 @@ namespace Inventory
     }
 
     /*************************************************************************
+     * Method PrintReceipt: Class Inventory
+     * ----------------------------------------------------------------------
+     * This function will print the receipt of the transaction.
+     * ----------------------------------------------------------------------
+     * PRE-CONDITIONS
+     *     none
+     *
+     * POST-CONDITIONS
+     *     The receipt will be printed.
+     *************************************************************************/
+
+    void ManageInventory::PrintReceipt() const
+    {
+        float total = 0;
+        for (int i = 0; i < count; i++)
+        {
+            total += p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity;
+        }
+        cout << "Total before tax: " << CostToString(total) << endl;
+        cout << "Total after tax: " << CostToString(total * 1.0825) << "\n\n";
+    }
+
+    /*************************************************************************
      * Method addItem: Class Inventory
      * ----------------------------------------------------------------------
      * This function will add an item to the inventory.
@@ -78,12 +101,12 @@ namespace Inventory
      * ----------------------------------------------------------------------
      * This function will transfer an item from this object to another object.
      * ----------------------------------------------------------------------
-     * PRE-CON
+     * PRE-CONDITIONS
      *     ManageInventory &inventory: The inventory to transfer the item to.
      *     string name: The name of the item.
      *     int quantity: The quantity of the item.
      * 
-     * POST-CON
+     * POST-CONDITIONS
      *     The item will be transferred from this object to the other object.
      *************************************************************************/
 
@@ -121,38 +144,15 @@ namespace Inventory
     }
 
     /*************************************************************************
-     * Method PrintReceipt: Class Inventory
-     * ----------------------------------------------------------------------
-     * This function will print the receipt of the transaction.
-     * ----------------------------------------------------------------------
-     * PRE-CON
-     *     none
-     *
-     * POST-CON
-     *     The receipt will be printed.
-     *************************************************************************/
-
-    void ManageInventory::PrintReceipt()
-    {
-        float total = 0;
-        for (int i = 0; i < count; i++)
-        {
-            total += p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity;
-        }
-        cout << "Total before tax: " << CostToString(total) << endl;
-        cout << "Total after tax: " << CostToString(total * 1.0825) << "\n\n";
-    }
-
-    /*************************************************************************
      * Method Buy: Class Inventory
      * ----------------------------------------------------------------------
      * This function will buy all the items in the inventory and add them to the
      * history.
      * ----------------------------------------------------------------------
-     * PRE-CON
+     * PRE-CONDITIONS
      *     ManageInventory &history: The inventory to transfer the item to.
      * 
-     * POST-CON
+     * POST-CONDITIONS
      *     The items will be transferred from this object to the other object.
      *************************************************************************/
     
@@ -177,10 +177,10 @@ namespace Inventory
      * ----------------------------------------------------------------------
      * This function will convert the cost to a string.
      * ----------------------------------------------------------------------
-     * PRE-CON
+     * PRE-CONDITIONS
      *     float cost: The cost of the item.
      *
-     * POST-CON
+     * POST-CONDITIONS
      *     The cost will be converted to a string.
      *************************************************************************/
 

@@ -19,14 +19,22 @@ namespace Inventory
     class ManageInventory
     {
     public:
+
+        /*** Constructor & Destructor ***/
+
         ManageInventory() : size(MAX_SIZE), count{0}, p_pInventoryItems{new Item *[MAX_SIZE]} {}
         ManageInventory(int size = MAX_SIZE) : size{size}, count{0}, p_pInventoryItems{new Item *[size]} {}
         ManageInventory(const ManageInventory &other);
         ~ManageInventory();
 
+        /*** Accessors ***/
+
+        void PrintReceipt() const;
+
+        /*** Mutators ***/
+
         void AddItem(string name, int quantity, float cost);
         void TransferTo(ManageInventory &inventory, string name, int quantity);
-        void PrintReceipt();
         void Buy(ManageInventory &history);
 
     private:
