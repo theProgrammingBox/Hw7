@@ -100,22 +100,18 @@ namespace Inventory
                 }
                 else
                 {
-                    bool foundTitle = false;
                     for (int j = 0; j < inventory.count; j++)
                     {
                         if (inventory.p_pInventoryItems[j]->name == name)
                         {
-                            foundTitle = true;
                             inventory.p_pInventoryItems[j]->quantity += quantity;
                             p_pInventoryItems[i]->quantity -= quantity;
-                            break;
+                            cout << quantity << " of " << name << " was transferred.\n";
+                            return;
                         }
                     }
-                    if (!foundTitle)
-                    {
-                        inventory.AddItem(name, quantity, p_pInventoryItems[i]->cost);
-                        p_pInventoryItems[i]->quantity -= quantity;
-                    }
+                    inventory.AddItem(name, quantity, p_pInventoryItems[i]->cost);
+                    p_pInventoryItems[i]->quantity -= quantity;
                     cout << quantity << " of " << name << " was transferred.\n";
                     return;
                 }
