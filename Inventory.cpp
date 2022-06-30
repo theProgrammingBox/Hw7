@@ -197,7 +197,9 @@ namespace Inventory
             costStrOut += costStr[index];
             index++;
         }
-        return "$" + costStrOut + '.' + costFloatStr.substr(costFloatStr.size() - 2);
+        int decimalPoint = costFloatStr.find('.');
+        string costDecimalStr = costFloatStr.substr(decimalPoint + 1, 2);
+        return "$" + costStrOut + '.' + costDecimalStr;
     }
 
     /*************************************************************************
