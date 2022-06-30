@@ -40,22 +40,19 @@ int main()
     inventory.AddItem("Brooks running shoes", 11, 111.44);
     inventory.AddItem("Asics running shoes", 20, 165.88);
     inventory.AddItem("Nike shorts", 77, 45.77);
-    cout << "Inventory: " << inventory << endl;
-
-    // If Mark purchases two pairs of Nike basketball shoes,
-    // three Under Armour T - shirts, four Nike shorts, and one pair of Brooks running shoe
+    cout << "Inventory:\n" << inventory << endl;
 
     inventory.TransferTo(cart, "Nike basketball shoes", 2);
     inventory.TransferTo(cart, "Under Armour T-shirt", 3);
     inventory.TransferTo(cart, "Nike shorts", 4);
     inventory.TransferTo(cart, "Brooks running shoes", 1);
-    cout << "Cart: " << cart << endl;
-    cout << "History: " << history << endl;
+    cout << "Cart:\n" << cart << endl;
+    cout << "History:\n" << history << endl;
     cart.Buy(history);
 
     ManageInventory inventory2(inventory);
-    cout << "Inventory2: " << inventory2 << endl;
-    cout << "Cart: " << cart << endl;
-    cout << "History: " << history << endl;
+    cout << "Inventory2:\n" << inventory2 << endl;
+    cout << "Cart:\n" << cart << endl;
+    cout << "History:\n" << history << endl;
     return 0;
 }

@@ -61,7 +61,7 @@ namespace Inventory
     {
         if (count == size)
         {
-            cout << "This inventory is full.\n\n";
+            cout << "This inventory is full.\n";
         }
         else
         {
@@ -95,7 +95,7 @@ namespace Inventory
             {
                 if (p_pInventoryItems[i]->quantity < quantity)
                 {
-                    cout << "Not enough of this item in this inventory.\n\n";
+                    cout << "Not enough of this item in this inventory.\n";
                     return;
                 }
                 else
@@ -116,12 +116,12 @@ namespace Inventory
                         inventory.AddItem(name, quantity, p_pInventoryItems[i]->cost);
                         p_pInventoryItems[i]->quantity -= quantity;
                     }
-                    cout << quantity << " of " << name << " was transferred to the inventory.\n\n";
+                    cout << quantity << " of " << name << " was transferred to the inventory.\n";
                     return;
                 }
             }
         }
-        cout << "This item is not in this inventory.\n\n";
+        cout << "This item is not in this inventory.\n";
     }
 
     /*************************************************************************
@@ -144,7 +144,7 @@ namespace Inventory
             total += p_pInventoryItems[i]->cost * p_pInventoryItems[i]->quantity;
         }
         cout << "Receipt before tax: " << total << endl;
-        cout << "Receipt after tax: " << total * 1.0825 << "\n\n";
+        cout << "Receipt after tax: " << total * 1.0825 << endl;
     }
 
     /*************************************************************************
@@ -191,7 +191,7 @@ namespace Inventory
         else
         {
             o << "This inventory contains:" << endl;
-            o << setw(20) << left << "Name" << setw(10) << left << "Quantity" << setw(10) << left << "Cost" << endl;
+            o << setw(20) << left << "Name" << setw(10) << right << "Quantity" << setw(10) << right << "Cost" << endl;
             for (int i = 0; i < inventory.count; i++)
             {
                 o << setw(20) << left << inventory.p_pInventoryItems[i]->name << setw(10) << right << inventory.p_pInventoryItems[i]->quantity << setw(10) << right << inventory.p_pInventoryItems[i]->cost << endl;
