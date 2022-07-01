@@ -65,11 +65,11 @@ int main()
     inventory.TransferTo(cart, "Nike shorts", 2);
     inventory.TransferTo(cart, "Nike basketball shoes", 2);
     cout << endl;
+    ManageInventory history2(history);
     cout << "Inventory2:\n" << inventory2 << endl;
     cout << "Cart:\n" << cart << endl;
-    cout << "History:\n" << history << endl;
+    cout << "History:\n" << history2 << endl;
 
-    ManageInventory history2(history);
     cart.Buy(history2);
     cout << "Inventory2:\n" << inventory2 << endl;
     cout << "Cart:\n" << cart << endl;
