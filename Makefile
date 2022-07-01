@@ -14,7 +14,10 @@ Inventory.o: Inventory.cpp Inventory.h
 	$(CC) $(FLAGS) -c Inventory.cpp -o Inventory.o
 
 clean:
-	rm *.0 Hw7
+	rm *.o *.tar *.scr Hw7
+
+sudoClean:
+	rm *.o *.scr Hw7
 
 tar:
 	tar cf Hw7.tar Hw7.scr Makefile Hw7.cpp Inventory.h Inventory.cpp
